@@ -15,22 +15,22 @@ let materials = [];
 let materialsBaseLED = [];
 let shapesMaterialsStar = []
 
-let renderBlksPart1 = [];
-let renderBlksPart2 = [];
-let renderBlksPart3 = [];
-let renderBlksPart4 = [];
+let renderBlocksPart1 = [];
+let renderBlocksPart2 = [];
+let renderBlocksPart3 = [];
+let renderBlocksPart4 = [];
 
-let renderBlksLine1A = [];
-let renderBlksLine2A = [];
-let renderBlksLine3A = [];
-let renderBlksLine4A = [];
-let renderBlksLine1B = [];
-let renderBlksLine2B = [];
-let renderBlksLine3B = [];
-let renderBlksLine4B = [];
+let renderBlocksLine1A = [];
+let renderBlocksLine2A = [];
+let renderBlocksLine3A = [];
+let renderBlocksLine4A = [];
+let renderBlocksLine1B = [];
+let renderBlocksLine2B = [];
+let renderBlocksLine3B = [];
+let renderBlocksLine4B = [];
 
-let renderBlksBigLine = [];
-let renderBlksSmallLine = [];
+let renderBlocksBigLine = [];
+let renderBlocksSmallLine = [];
 
 
 let blockSmallLine;
@@ -49,7 +49,7 @@ let baseLEDSide = [];
 
 let camera;
 
-let blksAllocated = 0;
+let blocksAllocated = 0;
 
 let shapesStar;
 
@@ -61,45 +61,45 @@ let shapesStar;
 
 function shapesAllocateBlocks(currentCount){
 
-    for(let i = blksAllocated; i <currentCount; i++){
+    for(let i = blocksAllocated; i <currentCount; i++){
         
-                renderBlksPart1[i] = blockChamf.clone("A" + i);
-                renderBlksPart2[i] = blockChamf.clone("X" + i);
-                renderBlksPart3[i] = blockNoChamf.clone("B" + i);
-                renderBlksPart4[i] = blockNoChamf.clone("C" + i);
+                renderBlocksPart1[i] = blockChamf.clone("A" + i);
+                renderBlocksPart2[i] = blockChamf.clone("X" + i);
+                renderBlocksPart3[i] = blockNoChamf.clone("B" + i);
+                renderBlocksPart4[i] = blockNoChamf.clone("C" + i);
         
-                renderBlksLine1A[i] = blockChamfNippleLineA.clone("A" + i);
-                renderBlksLine2A[i] = blockChamfNippleLineA.clone("X" + i); 
-                renderBlksLine3A[i] = blockChamfNippleLineA.clone("B" + i); 
-                renderBlksLine4A[i] = blockChamfNippleLineA.clone("C" + i); 
+                renderBlocksLine1A[i] = blockChamfNippleLineA.clone("A" + i);
+                renderBlocksLine2A[i] = blockChamfNippleLineA.clone("X" + i); 
+                renderBlocksLine3A[i] = blockChamfNippleLineA.clone("B" + i); 
+                renderBlocksLine4A[i] = blockChamfNippleLineA.clone("C" + i); 
         
-                renderBlksLine1B[i] = blockChamfNippleLineB.clone("A" + i);
-                renderBlksLine2B[i] = blockChamfNippleLineB.clone("X" + i);
-                renderBlksLine3B[i] = blockChamfNippleLineB.clone("B" + i);
-                renderBlksLine4B[i] = blockChamfNippleLineB.clone("C" + i);
-        
-                
-                renderBlksLine1A[i].isPickable = false;
-                renderBlksLine2A[i].isPickable = false;
-                renderBlksLine3A[i].isPickable = false; 
-                renderBlksLine4A[i].isPickable = false;
-        
-                renderBlksLine1B[i].isPickable = false;
-                renderBlksLine2B[i].isPickable = false;
-                renderBlksLine3B[i].isPickable = false;
-                renderBlksLine4B[i].isPickable = false;
+                renderBlocksLine1B[i] = blockChamfNippleLineB.clone("A" + i);
+                renderBlocksLine2B[i] = blockChamfNippleLineB.clone("X" + i);
+                renderBlocksLine3B[i] = blockChamfNippleLineB.clone("B" + i);
+                renderBlocksLine4B[i] = blockChamfNippleLineB.clone("C" + i);
         
                 
-                renderBlksBigLine[i] = blockBigLine.clone("Y" + i);
-                renderBlksSmallLine[i] = blockSmallLine.clone("Y" + i);
+                renderBlocksLine1A[i].isPickable = false;
+                renderBlocksLine2A[i].isPickable = false;
+                renderBlocksLine3A[i].isPickable = false; 
+                renderBlocksLine4A[i].isPickable = false;
         
-                renderBlksBigLine[i].isPickable = false;
-                renderBlksSmallLine[i].isPickable = false;
+                renderBlocksLine1B[i].isPickable = false;
+                renderBlocksLine2B[i].isPickable = false;
+                renderBlocksLine3B[i].isPickable = false;
+                renderBlocksLine4B[i].isPickable = false;
+        
+                
+                renderBlocksBigLine[i] = blockBigLine.clone("Y" + i);
+                renderBlocksSmallLine[i] = blockSmallLine.clone("Y" + i);
+        
+                renderBlocksBigLine[i].isPickable = false;
+                renderBlocksSmallLine[i].isPickable = false;
         
                     
             }
 
-            blksAllocated =  currentCount;
+            blocksAllocated =  currentCount;
 
 }
 

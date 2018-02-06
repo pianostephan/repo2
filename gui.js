@@ -40,7 +40,7 @@ let snapDiagonalB = 2; //1 for 8pos, 2 4pos
 
 
 //color wheel
-var btnColorWheel = [];
+var buttonColorWheel = [];
 var advancedTextureColorSelect; //= BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("ColorSelect");
 
 function initGui() {
@@ -95,7 +95,7 @@ function initGui() {
 
   
 
-var btnColorWheelSize = "1px";
+var buttonColorWheelSize = "1px";
 
 
 /*
@@ -113,10 +113,10 @@ var btnColorWheelSize = "1px";
   var bCWPOR = 20;
   */
 
-  var btnColorWheelPaddingT = [ bCWPMax +bCWPOT, bCWPMin +bCWPOT,  bCWPOT-(bCWPSize/2) , bCWPOT-(bCWPMin +bCWPSize), bCWPOT-(bCWPMax + bCWPSize), bCWPOT-(bCWPMin + bCWPSize), bCWPOT-(bCWPSize/2) , bCWPMin+bCWPOT];
-  var btnColorWheelPaddingB = [-(bCWPMax+bCWPSize+bCWPOT),-(bCWPMin + bCWPSize +bCWPOT), -(bCWPSize/2 + bCWPOT) , bCWPMin-bCWPOT, bCWPMax-bCWPOT, bCWPMin-bCWPOT, -(bCWPSize/2 +bCWPOT) , -(bCWPMin + bCWPSize+bCWPOT)];
-  var btnColorWheelPaddingL = [bCWPOR-(bCWPSize/2), bCWPMin +bCWPOR, bCWPMax+bCWPOR, bCWPMin+bCWPOR, bCWPOR-(bCWPSize/2), bCWPOR-(bCWPMin +bCWPSize), bCWPOR-(bCWPMax +bCWPSize), bCWPOR-(bCWPMin + bCWPSize)];
-  var btnColorWheelPaddingR = [-(bCWPSize/2 +bCWPOR), -(bCWPMin+bCWPSize +bCWPOR), -(bCWPMax +bCWPSize+bCWPOR), -(bCWPMin + bCWPSize+bCWPOR), -(bCWPSize/2 +bCWPOR), bCWPMin-bCWPOR, bCWPMax-bCWPOR, bCWPMin-bCWPOR];
+  var buttonColorWheelPaddingT = [ bCWPMax +bCWPOT, bCWPMin +bCWPOT,  bCWPOT-(bCWPSize/2) , bCWPOT-(bCWPMin +bCWPSize), bCWPOT-(bCWPMax + bCWPSize), bCWPOT-(bCWPMin + bCWPSize), bCWPOT-(bCWPSize/2) , bCWPMin+bCWPOT];
+  var buttonColorWheelPaddingB = [-(bCWPMax+bCWPSize+bCWPOT),-(bCWPMin + bCWPSize +bCWPOT), -(bCWPSize/2 + bCWPOT) , bCWPMin-bCWPOT, bCWPMax-bCWPOT, bCWPMin-bCWPOT, -(bCWPSize/2 +bCWPOT) , -(bCWPMin + bCWPSize+bCWPOT)];
+  var buttonColorWheelPaddingL = [bCWPOR-(bCWPSize/2), bCWPMin +bCWPOR, bCWPMax+bCWPOR, bCWPMin+bCWPOR, bCWPOR-(bCWPSize/2), bCWPOR-(bCWPMin +bCWPSize), bCWPOR-(bCWPMax +bCWPSize), bCWPOR-(bCWPMin + bCWPSize)];
+  var buttonColorWheelPaddingR = [-(bCWPSize/2 +bCWPOR), -(bCWPMin+bCWPSize +bCWPOR), -(bCWPMax +bCWPSize+bCWPOR), -(bCWPMin + bCWPSize+bCWPOR), -(bCWPSize/2 +bCWPOR), bCWPMin-bCWPOR, bCWPMax-bCWPOR, bCWPMin-bCWPOR];
 
 
   for(var b = 0; b < 2; b++ ){
@@ -126,25 +126,25 @@ var btnColorWheelSize = "1px";
               
               //let tmpI = (4*b)+ (2*g) + r;
               let tmpI = (4*r)+ (2*g) + b;
-              btnColorWheel[tmpI] = new BABYLON.GUI.Ellipse();
+              buttonColorWheel[tmpI] = new BABYLON.GUI.Ellipse();
 
-              btnColorWheel[tmpI].color =  "#101050";
+              buttonColorWheel[tmpI].color =  "#101050";
 
-              btnColorWheel[tmpI].width = btnColorWheelSize;//"160px"
-              btnColorWheel[tmpI].height = btnColorWheelSize;//"160px";
+              buttonColorWheel[tmpI].width = buttonColorWheelSize;//"160px"
+              buttonColorWheel[tmpI].height = buttonColorWheelSize;//"160px";
               
-              btnColorWheel[tmpI].paddingTop = btnColorWheelPaddingT[tmpI];
-              btnColorWheel[tmpI].paddingBottom = btnColorWheelPaddingB[tmpI];
-              btnColorWheel[tmpI].paddingLeft = btnColorWheelPaddingL[tmpI];
-              btnColorWheel[tmpI].paddingRight = btnColorWheelPaddingR[tmpI];
+              buttonColorWheel[tmpI].paddingTop = buttonColorWheelPaddingT[tmpI];
+              buttonColorWheel[tmpI].paddingBottom = buttonColorWheelPaddingB[tmpI];
+              buttonColorWheel[tmpI].paddingLeft = buttonColorWheelPaddingL[tmpI];
+              buttonColorWheel[tmpI].paddingRight = buttonColorWheelPaddingR[tmpI];
 
-              //btnColorWheel[tmpI].left -= 200;
-              //btnColorWheel[tmpI].shadowBlur = 1;
-              //btnColorWheel[tmpI].shadowOffsetX = 1;
-              //btnColorWheel[tmpI].shadowOffsetY = 1;
-              //btnColorWheel[tmpI].shadowColor = "#111";
-              //btnColorWheel[tmpI].margin = "40px";
-              btnColorWheel[tmpI].thickness = 3;
+              //buttonColorWheel[tmpI].left -= 200;
+              //buttonColorWheel[tmpI].shadowBlur = 1;
+              //buttonColorWheel[tmpI].shadowOffsetX = 1;
+              //buttonColorWheel[tmpI].shadowOffsetY = 1;
+              //buttonColorWheel[tmpI].shadowColor = "#111";
+              //buttonColorWheel[tmpI].margin = "40px";
+              buttonColorWheel[tmpI].thickness = 3;
               let colorString = "#"
               
               if(b){
@@ -166,12 +166,12 @@ var btnColorWheelSize = "1px";
             }
 
               if(r||g||b){
-              btnColorWheel[tmpI].background =    colorString;
+              buttonColorWheel[tmpI].background =    colorString;
               }
-              //btnColorWheel[tmpI].onPointerEnterObservable.add(function() {
+              //buttonColorWheel[tmpI].onPointerEnterObservable.add(function() {
 
-              btnColorWheel[tmpI].onPointerMoveObservable.add(function() {
-                  //console.log('btncolorwheel R: ' + tmpI);
+              buttonColorWheel[tmpI].onPointerMoveObservable.add(function() {
+                  //console.log('buttoncolorwheel R: ' + tmpI);
                   //blocksLEDs2x2[colorWheelMeshI] = tmpI;
                   if( colorWheelMeshType == 'B'){
                     //  console.log('A colorWheelMeshI: ' + colorWheelMeshI);
@@ -245,60 +245,60 @@ var btnColorWheelSize = "1px";
                    guiPanelStart.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
                    advancedTextureStart.addControl(guiPanelStart);
            
-                   var btnSnap = BABYLON.GUI.Button.CreateSimpleButton("btnSnap", "Snap");
-                   btnSnap.width = "150px"
-                   btnSnap.height = "40px";
-                   btnSnap.paddingTop = "10px";
-                   btnSnap.paddingRight = "10px";
-                   btnSnap.color = "white";
-                   btnSnap.cornerRadius = 20;
-                   btnSnap.background = "green";
-                   btnSnap.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
-                   btnSnap.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
-                   btnSnap.isVisible = false;
+                   var buttonSnap = BABYLON.GUI.Button.CreateSimpleButton("buttonSnap", "Snap");
+                   buttonSnap.width = "150px"
+                   buttonSnap.height = "40px";
+                   buttonSnap.paddingTop = "10px";
+                   buttonSnap.paddingRight = "10px";
+                   buttonSnap.color = "white";
+                   buttonSnap.cornerRadius = 20;
+                   buttonSnap.background = "green";
+                   buttonSnap.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
+                   buttonSnap.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
+                   buttonSnap.isVisible = false;
            
                    
            
-                   btnSnap.onPointerEnterObservable.add(function() {
+                   buttonSnap.onPointerEnterObservable.add(function() {
                        console.log('Snap ');
            
            
                    });
-                   guiPanelStart.addControl(btnSnap); 
+                   guiPanelStart.addControl(buttonSnap); 
            
-                   var btnStart = BABYLON.GUI.Button.CreateSimpleButton("btnStart", "Start");
-                   btnStart.width = "150px"
-                   btnStart.height = "40px";
-                   btnStart.paddingTop = "10px";
-                   btnStart.paddingRight = "10px";
-                   btnStart.color = "white";
-                   btnStart.cornerRadius = 20;
-                   btnStart.background = "green";
-                   btnStart.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
-                   btnStart.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
+                   var buttonStart = BABYLON.GUI.Button.CreateSimpleButton("buttonStart", "Start");
+                   buttonStart.width = "150px"
+                   buttonStart.height = "40px";
+                   buttonStart.paddingTop = "10px";
+                   buttonStart.paddingRight = "10px";
+                   buttonStart.color = "white";
+                   buttonStart.cornerRadius = 20;
+                   buttonStart.background = "green";
+                   buttonStart.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
+                   buttonStart.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
            
-                   btnStart.onPointerDownObservable.add(function() {
-                       btnSnap.isVisible = true;
+                   buttonStart.onPointerDownObservable.add(function() {
+                       buttonSnap.isVisible = true;
                        console.log('Start ');
                    });
            
            
-                   guiPanelStart.addControl(btnStart); 
+                   guiPanelStart.addControl(buttonStart); 
            
                   
-                   var btnCompass = BABYLON.GUI.Button.CreateSimpleButton("btnCompass", "Full Screen");
-                   btnCompass.width = "150px"
-                   btnCompass.height = "40px";
-                   btnCompass.paddingTop = "10px";
-                   btnCompass.paddingRight = "10px";
-                   btnCompass.color = "white";
-                   btnCompass.cornerRadius = 20;
-                   btnCompass.background = "green";
-                   btnCompass.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM;
-                   btnCompass.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
+                   var buttonCompass = BABYLON.GUI.Button.CreateSimpleButton("buttonCompass", "Full Screen");
+                   buttonCompass.width = "150px"
+                   buttonCompass.height = "40px";
+                   buttonCompass.paddingTop = "10px";
+                   buttonCompass.paddingRight = "10px";
+                   buttonCompass.color = "white";
+                   buttonCompass.cornerRadius = 20;
+                   buttonCompass.background = "green";
+                   buttonCompass.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM;
+                   buttonCompass.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
            
-                   btnCompass.onPointerDownObservable.add(function() {
-                       btnSnap.isVisible = true;
+                   buttonCompass.onPointerDownObservable.add(function() {
+                       buttonSnap.isVisible = true;
                        if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
                            (!document.mozFullScreen && !document.webkitIsFullScreen)) {
                            if (document.documentElement.requestFullScreen) {  
@@ -320,7 +320,7 @@ var btnColorWheelSize = "1px";
                       // console.log('Compass ');
                    });
            
-                   guiPanelStart.addControl(btnCompass); 
+                   guiPanelStart.addControl(buttonCompass); 
         
                    
 
@@ -388,32 +388,32 @@ function guiPointerDownd(pickResult){
                                             console.log('colorWheelMeshType: X ' + colorWheelMeshType+ " X ");
                                             
                                              for(let i = 0; i < 8; i++){
-                                                advancedTextureColorSelect.addControl(btnColorWheel[i]);
+                                                advancedTextureColorSelect.addControl(buttonColorWheel[i]);
                                                 
                                 
-                                                btnColorWheel[i].linkWithMesh(pickResult.pickedMesh);
+                                                buttonColorWheel[i].linkWithMesh(pickResult.pickedMesh);
                                                // scene.pick(scene.pointerX, scene.pointerY)
-                                                //btnColorWheel[i].linkWithMesh(renderBlocksPart1[0]);
+                                                //buttonColorWheel[i].linkWithMesh(renderBlocksPart1[0]);
                                               
                                             }
                                 
-                                              //advancedTextureColorSelect.addControl(btnR); 
-                                              //advancedTextureColorSelect.addControl(btnRG); 
+                                              //advancedTextureColorSelect.addControl(buttonR); 
+                                              //advancedTextureColorSelect.addControl(buttonRG); 
                                 
-                                              //btnR.linkWithMesh(renderBlocksPart1[0]);
-                                              //btnRG.linkWithMesh(renderBlocksPart1[0]);
+                                              //buttonR.linkWithMesh(renderBlocksPart1[0]);
+                                              //buttonRG.linkWithMesh(renderBlocksPart1[0]);
                                 
                                               scene.activeCamera.detachControl(canvas);
                                              
                                      //   advancedTextureColorSelect.dispose();
                                 
-                                            /*btnR.isVisible = true;
-                                            btnR.top = "100px";
-                                            btnR.y = pickResult.pickedPoint.y;
+                                            /*buttonR.isVisible = true;
+                                            buttonR.top = "100px";
+                                            buttonR.y = pickResult.pickedPoint.y;
                                 
-                                            btnR.linkWithMesh(sphere1);
+                                            buttonR.linkWithMesh(sphere1);
                                 */
-                                           // btnColorSelect.isVisible = true;
+                                           // buttonColorSelect.isVisible = true;
                                 
                                 
                                 
@@ -426,16 +426,16 @@ function guiPointerDownd(pickResult){
                                 
                                 var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(plane);
                                 
-                                var btn1 = BABYLON.GUI.Button.CreateSimpleButton("but1", "Click Me");
-                                btn1.width = 1;
-                                btn1.height = 0.4;
-                                btn1.color = "white";
-                                btn1.fontSize = 50;
-                                btn1.background = "green";
-                                btn1.onPointerUpObservable.add(function() {
+                                var button1 = BABYLON.GUI.Button.CreateSimpleButton("but1", "Click Me");
+                                button1.width = 1;
+                                button1.height = 0.4;
+                                button1.color = "white";
+                                button1.fontSize = 50;
+                                button1.background = "green";
+                                button1.onPointerUpObservable.add(function() {
                                     alert("you did it!");
                                 });
-                                advancedTexture.addControl(btn1);*/
+                                advancedTexture.addControl(button1);*/
                                 
                                         }
                                         // if the click hits the ground object, we change the impact position
@@ -503,12 +503,12 @@ function guiSettingsFocusChange(){
     
 }
 
-function guiSettingsSizeChange (btn, size, paddingLeft, paddingTop){
+function guiSettingsSizeChange (button, size, paddingLeft, paddingTop){
 
-    btn.width = size + "px";
-    btn.height = size + "px";
-    btn.left = paddingLeft + "px";
-    btn.top = "-" + paddingTop + "px";
+    button.width = size + "px";
+    button.height = size + "px";
+    button.left = paddingLeft + "px";
+    button.top = "-" + paddingTop + "px";
 
 
 }

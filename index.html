@@ -55,7 +55,7 @@ html,body, can {
         /*
         Ask for block positions and send LED information
         Get response from base
-        Populate BlksX,Y,Z,R
+        Populate BlocksX,Y,Z,R
         Compare with last responce to rearrange LED data 
         block and blockLast information is the same
         Render
@@ -189,7 +189,7 @@ guiInitSettingsMenu();
 
 var advancedTextureBattery = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
     
-        textBattery = new BABYLON.GUI.TextBlk();
+        textBattery = new BABYLON.GUI.TextBlock();
         textBattery.text = "Battery: ";
         textBattery.color = "white";
         textBattery.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
@@ -300,17 +300,17 @@ for(let i = 0; i < cmd_pos; i++ ){
         guiPanelRight.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
         advancedTexture.addControl(guiPanelRight);
 
-        var btnConBLE = BABYLON.GUI.Button.CreateSimpleButton("butBLE", "Connect");
-        btnConBLE.width = "150px"
-        btnConBLE.height = "40px";
-        btnConBLE.paddingTop = "10px";
-        btnConBLE.paddingRight = "10px";
-        btnConBLE.color = "white";
-        btnConBLE.cornerRadius = 20;
-        btnConBLE.background = "green";
-        btnConBLE.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
-       // btnConBLE.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;   
-        btnConBLE.onPointerUpObservable.add(function() {
+        var buttonConBLE = BABYLON.GUI.Button.CreateSimpleButton("butBLE", "Connect");
+        buttonConBLE.width = "150px"
+        buttonConBLE.height = "40px";
+        buttonConBLE.paddingTop = "10px";
+        buttonConBLE.paddingRight = "10px";
+        buttonConBLE.color = "white";
+        buttonConBLE.cornerRadius = 20;
+        buttonConBLE.background = "green";
+        buttonConBLE.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
+       // buttonConBLE.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;   
+        buttonConBLE.onPointerUpObservable.add(function() {
 
         
 
@@ -591,22 +591,22 @@ for(let i = 0; i < cmd_pos; i++ ){
 
         //alert("Connect");
         });
-    guiPanelRight.addControl(btnConBLE); 
+    guiPanelRight.addControl(buttonConBLE); 
 
 
 
 
-    var btnUpdate = BABYLON.GUI.Button.CreateSimpleButton("butUpdate", "Update");
-    btnUpdate.width = "150px"
-    btnUpdate.height = "40px";
-    btnUpdate.paddingTop = "10px";
-    btnUpdate.paddingRight = "10px";
-    btnUpdate.color = "white";
-    btnUpdate.cornerRadius = 20;
-    btnUpdate.background = "green";
-    btnUpdate.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
-    btnUpdate.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;   
-    btnUpdate.onPointerUpObservable.add(function() {
+    var buttonUpdate = BABYLON.GUI.Button.CreateSimpleButton("butUpdate", "Update");
+    buttonUpdate.width = "150px"
+    buttonUpdate.height = "40px";
+    buttonUpdate.paddingTop = "10px";
+    buttonUpdate.paddingRight = "10px";
+    buttonUpdate.color = "white";
+    buttonUpdate.cornerRadius = 20;
+    buttonUpdate.background = "green";
+    buttonUpdate.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
+    buttonUpdate.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;   
+    buttonUpdate.onPointerUpObservable.add(function() {
 
  console.log('gattWrite');
 
@@ -622,10 +622,10 @@ blocksReceiving = 0;
 
     });
 
-    guiPanelRight.addControl(btnUpdate); 
+    guiPanelRight.addControl(buttonUpdate); 
 
 
-    function consolePrintBlks(tmpString, tmpArray){
+    function consolePrintBlocks(tmpString, tmpArray){
 
             
 
@@ -642,31 +642,31 @@ console.log(tmpString);
 }
 
     
-    var btnPrintBlkConfig = BABYLON.GUI.Button.CreateSimpleButton("butPrint", "Print");
-    btnPrintBlkConfig.width = "150px"
-    btnPrintBlkConfig.height = "40px";
-    btnPrintBlkConfig.paddingTop = "10px";
-    btnPrintBlkConfig.paddingRight = "10px";
-    btnPrintBlkConfig.color = "white";
-    btnPrintBlkConfig.cornerRadius = 20;
-    btnPrintBlkConfig.background = "green";
-    btnPrintBlkConfig.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
-    btnPrintBlkConfig.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;   
-    btnPrintBlkConfig.onPointerUpObservable.add(function() {
+    var buttonPrintBlockConfig = BABYLON.GUI.Button.CreateSimpleButton("butPrint", "Print");
+    buttonPrintBlockConfig.width = "150px"
+    buttonPrintBlockConfig.height = "40px";
+    buttonPrintBlockConfig.paddingTop = "10px";
+    buttonPrintBlockConfig.paddingRight = "10px";
+    buttonPrintBlockConfig.color = "white";
+    buttonPrintBlockConfig.cornerRadius = 20;
+    buttonPrintBlockConfig.background = "green";
+    buttonPrintBlockConfig.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
+    buttonPrintBlockConfig.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;   
+    buttonPrintBlockConfig.onPointerUpObservable.add(function() {
 
         
        let tmpString = "let gameX = [";
-       consolePrintBlks(tmpString, blocksX);
+       consolePrintBlocks(tmpString, blocksX);
        tmpString = "let gameY = [";
-       consolePrintBlks(tmpString, blocksY);
+       consolePrintBlocks(tmpString, blocksY);
        tmpString = "let gameZ = [";
-       consolePrintBlks(tmpString, blocksZ);
+       consolePrintBlocks(tmpString, blocksZ);
        tmpString = "let gameRT = [";
-       consolePrintBlks(tmpString, blocksRT);
+       consolePrintBlocks(tmpString, blocksRT);
        tmpString = "let gameLEDs2x2 = [";
-       consolePrintBlks(tmpString, blocksLEDs2x2);
+       consolePrintBlocks(tmpString, blocksLEDs2x2);
        tmpString = "let gameLEDs2x4 = [";
-       consolePrintBlks(tmpString, blocksLEDs2x4);
+       consolePrintBlocks(tmpString, blocksLEDs2x4);
 
 
 
@@ -676,16 +676,16 @@ console.log(tmpString);
 
        
 /*
-        levelBlkX[0] = 3;
-      levelBlkY[0] = 0;
-      levelBlkZ[0] = 2;
-      levelBlkRT[0] = 0;
-      levelBlksLEDs2x2[0] = 0x04;
-      levelBlksLEDs2x4[0] = 0x04;*/
+        levelBlockX[0] = 3;
+      levelBlockY[0] = 0;
+      levelBlockZ[0] = 2;
+      levelBlockRT[0] = 0;
+      levelBlocksLEDs2x2[0] = 0x04;
+      levelBlocksLEDs2x4[0] = 0x04;*/
 
     });
 
-    advancedTexture.addControl(btnPrintBlkConfig);
+    advancedTexture.addControl(buttonPrintBlockConfig);
     
     console.log("56%0:" + 56%0)
  
@@ -988,7 +988,7 @@ var url = "http://upload.wikimedia.org/wikipedia/en/8/86/Einstein_tongue.jpg";
 
                
                 
-              // var tmpBlkX = [0,1];
+              // var tmpBlockX = [0,1];
                
                 //use when games are chaning the number of blocks rendered compared to the real world
                 let blocksCountFromWorld = blocksCount;
@@ -997,7 +997,7 @@ var url = "http://upload.wikimedia.org/wikipedia/en/8/86/Einstein_tongue.jpg";
 
                 renderGuidedBuild(blocksX, blocksY, blocksZ, blocksRT, blocksLEDs2x2, blocksLEDs2x4, blocksUseAlpha, blocksOffset );
                // console.log("A0:" + blocksCount);
-                shapesAllocateBlks(blocksCount);
+                shapesAllocateBlocks(blocksCount);
                // console.log("A:" + blocksCount);
                 render(blocksX, blocksY, blocksZ, blocksRT, blocksLEDs2x2, blocksLEDs2x4, blocksUseAlpha, blocksOffset, blocksCount, blocksCountFromWorld);
                 //console.log("A1:" + blocksCount);
@@ -1009,8 +1009,8 @@ var url = "http://upload.wikimedia.org/wikipedia/en/8/86/Einstein_tongue.jpg";
             }
         
 
-            //console.log('renderBlksPart1[0].material.diffuseColor = ' +renderBlksPart1[0].material.diffuseColor);
-            //console.log('renderBlksPart2[0].material.diffuseColor = ' +renderBlksPart2[0].material.diffuseColor);
+            //console.log('renderBlocksPart1[0].material.diffuseColor = ' +renderBlocksPart1[0].material.diffuseColor);
+            //console.log('renderBlocksPart2[0].material.diffuseColor = ' +renderBlocksPart2[0].material.diffuseColor);
 
             scene.render();
         });
