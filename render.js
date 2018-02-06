@@ -1,31 +1,31 @@
-function render(blksX, blksY, blksZ, blksRT, blksLEDs2x2, blksLEDs2x4, blksUseAlpha, blksOffset, blksCount, blksCountFromWorld){
+function render(blocksX, blocksY, blocksZ, blocksRT, blocksLEDs2x2, blocksLEDs2x4, blocksUseAlpha, blocksOffset, blocksCount, blocksCountFromWorld){
 
     for(var i = 0; i <100; i++){
-        if(renderBlksPart1[i] != null){
+        if(renderBlocksPart1[i] != null){
           
-            renderBlksPart1[i].setEnabled(0); 
+            renderBlocksPart1[i].setEnabled(0); 
        
-            renderBlksPart2[i].setEnabled(0); 
+            renderBlocksPart2[i].setEnabled(0); 
         
        
-            renderBlksPart3[i].setEnabled(0); 
+            renderBlocksPart3[i].setEnabled(0); 
         
        
-            renderBlksPart4[i].setEnabled(0); 
+            renderBlocksPart4[i].setEnabled(0); 
         
 
-        renderBlksLine1A[i].setEnabled(0); 
-	renderBlksLine2A[i].setEnabled(0); 
-	renderBlksLine3A[i].setEnabled(0); 
-	renderBlksLine4A[i].setEnabled(0); 
+        renderBlocksLine1A[i].setEnabled(0); 
+renderBlocksLine2A[i].setEnabled(0); 
+renderBlocksLine3A[i].setEnabled(0); 
+renderBlocksLine4A[i].setEnabled(0); 
 
-	renderBlksLine1B[i].setEnabled(0); 
-		renderBlksLine2B[i].setEnabled(0); 
-	renderBlksLine3B[i].setEnabled(0); 
-	renderBlksLine4B[i].setEnabled(0); 
+renderBlocksLine1B[i].setEnabled(0); 
+renderBlocksLine2B[i].setEnabled(0); 
+renderBlocksLine3B[i].setEnabled(0); 
+renderBlocksLine4B[i].setEnabled(0); 
 
-	renderBlksBigLine[i].setEnabled(0); 
-	renderBlksSmallLine[i].setEnabled(0); 
+renderBlocksBigLine[i].setEnabled(0); 
+renderBlocksSmallLine[i].setEnabled(0); 
     }
 
     }
@@ -40,325 +40,325 @@ function render(blksX, blksY, blksZ, blksRT, blksLEDs2x2, blksLEDs2x4, blksUseAl
     baseLEDSide[0].material = materials[(baseLED[1] & 0x38) >> 3];
     baseLEDSide[9].material = materials[baseLED[1] & 0x07];
 
-    console.log("r blksOffset:" + blksOffset);
-    for(var i = 0; i < blksCount; i++){
+    console.log("r blocksOffset:" + blocksOffset);
+    for(var i = 0; i < blocksCount; i++){
         
                             
         
                  
-                            //!!renderBlksPart1[i] = blockChamf.clone("A" + i);
-                            renderBlksPart1[i].setEnabled(1); 
-                            renderBlksPart1[i].position.x = blksX[i+blksOffset];
-                            renderBlksPart1[i].position.z = blksZ[i+blksOffset];
-                            renderBlksPart1[i].position.y = blksY[i+blksOffset] * pitchY;
-                            renderBlksPart1[i].rotation.y = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                            //!!renderBlocksPart1[i] = blockChamf.clone("A" + i);
+                            renderBlocksPart1[i].setEnabled(1); 
+                            renderBlocksPart1[i].position.x = blocksX[i+blocksOffset];
+                            renderBlocksPart1[i].position.z = blocksZ[i+blocksOffset];
+                            renderBlocksPart1[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                            renderBlocksPart1[i].rotation.y = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
          
-                            renderBlksLine1A[i].setEnabled(1); 
-                            renderBlksLine1A[i].position.x = blksX[i+blksOffset];
-                            renderBlksLine1A[i].position.z = blksZ[i+blksOffset];
-                            renderBlksLine1A[i].position.y = blksY[i+blksOffset] * pitchY ;
-                            //renderBlksLine1A[i].rotation.y = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                            renderBlocksLine1A[i].setEnabled(1); 
+                            renderBlocksLine1A[i].position.x = blocksX[i+blocksOffset];
+                            renderBlocksLine1A[i].position.z = blocksZ[i+blocksOffset];
+                            renderBlocksLine1A[i].position.y = blocksY[i+blocksOffset] * pitchY ;
+                            //renderBlocksLine1A[i].rotation.y = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
         
-                            renderBlksLine1B[i].setEnabled(1); 
-                            renderBlksLine1B[i].position.x = blksX[i+blksOffset];
-                            renderBlksLine1B[i].position.z = blksZ[i+blksOffset];
-                            renderBlksLine1B[i].position.y = blksY[i+blksOffset] * pitchY;
-                            renderBlksLine1B[i].rotation.y = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                            renderBlocksLine1B[i].setEnabled(1); 
+                            renderBlocksLine1B[i].position.x = blocksX[i+blocksOffset];
+                            renderBlocksLine1B[i].position.z = blocksZ[i+blocksOffset];
+                            renderBlocksLine1B[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                            renderBlocksLine1B[i].rotation.y = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
         
-                        /*    if(i < blksCountFromWorld){
-                                renderBlksPart1[i].isPickable = true;
+                        /*    if(i < blocksCountFromWorld){
+                                renderBlocksPart1[i].isPickable = true;
                             }else{
-                                renderBlksPart1[i].isPickable = false;
+                                renderBlocksPart1[i].isPickable = false;
                             }*/
 
         
         
         
-                            if((blksRT[i+blksOffset] & 0x0C) == 4 ){
-                                renderBlksSmallLine[i].setEnabled(1); 
-                            renderBlksSmallLine[i].position.x = blksX[i+blksOffset];
-                            renderBlksSmallLine[i].position.z = blksZ[i+blksOffset];
-                            renderBlksSmallLine[i].position.y = blksY[i+blksOffset] * pitchY;
-                            renderBlksSmallLine[i].rotation.y = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                            if((blocksRT[i+blocksOffset] & 0x0C) == 4 ){
+                                renderBlocksSmallLine[i].setEnabled(1); 
+                            renderBlocksSmallLine[i].position.x = blocksX[i+blocksOffset];
+                            renderBlocksSmallLine[i].position.z = blocksZ[i+blocksOffset];
+                            renderBlocksSmallLine[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                            renderBlocksSmallLine[i].rotation.y = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
         
-                                //renderBlksPart2[i] = blockChamf.clone("B" + i);
-                                renderBlksPart2[i].setEnabled(1); 
-                                renderBlksPart2[i].name = "B" + i;
+                                //renderBlocksPart2[i] = blockChamf.clone("B" + i);
+                                renderBlocksPart2[i].setEnabled(1); 
+                                renderBlocksPart2[i].name = "B" + i;
         
-                                renderBlksLine2A[i].setEnabled(1);
-                                renderBlksLine2B[i].setEnabled(1);
+                                renderBlocksLine2A[i].setEnabled(1);
+                                renderBlocksLine2B[i].setEnabled(1);
                             
         
-                                if((blksRT[i+blksOffset] & 0x03) == 0 ){
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]+1;
+                                if((blocksRT[i+blocksOffset] & 0x03) == 0 ){
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]+1;
         
         
                                 }
-                                else if((blksRT[i+blksOffset] & 0x03) == 1 ){
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]-1;
+                                else if((blocksRT[i+blocksOffset] & 0x03) == 1 ){
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                }else if((blksRT[i+blksOffset] & 0x03) == 2 ){
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]-1;
+                                }else if((blocksRT[i+blocksOffset] & 0x03) == 2 ){
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                } else if((blksRT[i+blksOffset] & 0x03) == 3 ){
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]+1;
+                                } else if((blocksRT[i+blocksOffset] & 0x03) == 3 ){
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]+1;
                                 }  
                                 
-                                renderBlksPart2[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksPart2[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksPart2[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksPart2[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
-                                renderBlksLine2A[i].position.y = blksY[i+blksOffset] * pitchY;
-                                //renderBlksLine2A[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksLine2A[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                //renderBlocksLine2A[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
-                                renderBlksLine2B[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksLine2B[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksLine2B[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksLine2B[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
-                               //!! if(blksLEDs2x2[i] != null){
+                               //!! if(blocksLEDs2x2[i] != null){
                                 // console.log('i: ' + i);
-                             //   console.log('materials[blksLEDs2x2[i+blksOffset] & 0x07]: ' + materials[blksLEDs2x2[i+blksOffset] & 0x07]);
-                              //  console.log('materials[(blksLEDs2x2[i+blksOffset] & 0x38) >> 3]: ' + materials[(blksLEDs2x2[i+blksOffset] & 0x38) >> 3]);
-                             //   console.log('blksLEDs2x2[i+blksOffset] & 0x07: ' + (blksLEDs2x2[i+blksOffset] & 0x07));
-                             //   console.log('(blksLEDs2x2[i+blksOffset] & 0x38) >> 3: ' +((blksLEDs2x2[i+blksOffset] & 0x38) >> 3));
-                             //   console.log('i+blksOffset: ' + (i+blksOffset));
+                             //   console.log('materials[blocksLEDs2x2[i+blocksOffset] & 0x07]: ' + materials[blocksLEDs2x2[i+blocksOffset] & 0x07]);
+                              //  console.log('materials[(blocksLEDs2x2[i+blocksOffset] & 0x38) >> 3]: ' + materials[(blocksLEDs2x2[i+blocksOffset] & 0x38) >> 3]);
+                             //   console.log('blocksLEDs2x2[i+blocksOffset] & 0x07: ' + (blocksLEDs2x2[i+blocksOffset] & 0x07));
+                             //   console.log('(blocksLEDs2x2[i+blocksOffset] & 0x38) >> 3: ' +((blocksLEDs2x2[i+blocksOffset] & 0x38) >> 3));
+                             //   console.log('i+blocksOffset: ' + (i+blocksOffset));
                                 
                                     
 
-                                    renderBlksPart2[i].material = materials[(blksLEDs2x2[i+blksOffset] & 0x07) + 8*blksUseAlpha[i+blksOffset]];
-                                    renderBlksPart1[i].material = materials[((blksLEDs2x2[i+blksOffset] & 0x38) >> 3) + 8*blksUseAlpha[i+blksOffset]];
+                                    renderBlocksPart2[i].material = materials[(blocksLEDs2x2[i+blocksOffset] & 0x07) + 8*blocksUseAlpha[i+blocksOffset]];
+                                    renderBlocksPart1[i].material = materials[((blocksLEDs2x2[i+blocksOffset] & 0x38) >> 3) + 8*blocksUseAlpha[i+blocksOffset]];
                                     
-                                   // console.log('renderBlksPart1[i].material = ' +renderBlksPart1[i].material);
-                               // console.log('renderBlksPart2[i].material = ' +renderBlksPart2[i].material);
+                                   // console.log('renderBlocksPart1[i].material = ' +renderBlocksPart1[i].material);
+                               // console.log('renderBlocksPart2[i].material = ' +renderBlocksPart2[i].material);
         
                               //!!  }
                             
                             //0 = 2x4
                             
                             
-                            }else if((blksRT[i+blksOffset] & 0x0C) == 0){
+                            }else if((blocksRT[i+blocksOffset] & 0x0C) == 0){
         
-                                renderBlksBigLine[i].setEnabled(1); 
-                                renderBlksBigLine[i].position.x = blksX[i+blksOffset];
-                                renderBlksBigLine[i].position.z = blksZ[i+blksOffset];
-                                renderBlksBigLine[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksBigLine[i].rotation.y = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                                renderBlocksBigLine[i].setEnabled(1); 
+                                renderBlocksBigLine[i].position.x = blocksX[i+blocksOffset];
+                                renderBlocksBigLine[i].position.z = blocksZ[i+blocksOffset];
+                                renderBlocksBigLine[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksBigLine[i].rotation.y = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
         
                                 
-                                renderBlksPart2[i].setEnabled(1); 
-                                renderBlksPart2[i].name = "D" + i;
+                                renderBlocksPart2[i].setEnabled(1); 
+                                renderBlocksPart2[i].name = "D" + i;
         
-                                renderBlksLine2A[i].setEnabled(1);
-                                renderBlksLine2B[i].setEnabled(1);
-        
-        
-                                renderBlksPart3[i].setEnabled(1); 
-        
-                                renderBlksLine3A[i].setEnabled(1);
-                                renderBlksLine3B[i].setEnabled(1);
+                                renderBlocksLine2A[i].setEnabled(1);
+                                renderBlocksLine2B[i].setEnabled(1);
         
         
-                                if((blksRT[i+blksOffset] & 0x03) == 0 ){
-                                    renderBlksPart3[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksPart3[i].position.z = blksZ[i+blksOffset]+1;
+                                renderBlocksPart3[i].setEnabled(1); 
         
-                                    renderBlksLine3A[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine3A[i].position.z = blksZ[i+blksOffset]+1;
+                                renderBlocksLine3A[i].setEnabled(1);
+                                renderBlocksLine3B[i].setEnabled(1);
         
-                                    renderBlksLine3B[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine3B[i].position.z = blksZ[i+blksOffset]+1;
+        
+                                if((blocksRT[i+blocksOffset] & 0x03) == 0 ){
+                                    renderBlocksPart3[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksPart3[i].position.z = blocksZ[i+blocksOffset]+1;
+        
+                                    renderBlocksLine3A[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine3A[i].position.z = blocksZ[i+blocksOffset]+1;
+        
+                                    renderBlocksLine3B[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine3B[i].position.z = blocksZ[i+blocksOffset]+1;
                                 }
-                                else if((blksRT[i+blksOffset] & 0x03) == 1 ){
-                                    renderBlksPart3[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksPart3[i].position.z = blksZ[i+blksOffset]-1;
+                                else if((blocksRT[i+blocksOffset] & 0x03) == 1 ){
+                                    renderBlocksPart3[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksPart3[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine3A[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine3A[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine3A[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine3A[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine3B[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine3B[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine3B[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine3B[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                }else if((blksRT[i+blksOffset] & 0x03) == 2 ){
-                                    renderBlksPart3[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksPart3[i].position.z = blksZ[i+blksOffset]-1;
+                                }else if((blocksRT[i+blocksOffset] & 0x03) == 2 ){
+                                    renderBlocksPart3[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksPart3[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine3A[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine3A[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine3A[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine3A[i].position.z = blocksZ[i+blocksOffset]-1;
                                     
-                                    renderBlksLine3B[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine3B[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine3B[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine3B[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                } else if((blksRT[i+blksOffset] & 0x03) == 3 ){
-                                    renderBlksPart3[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksPart3[i].position.z = blksZ[i+blksOffset]+1;
+                                } else if((blocksRT[i+blocksOffset] & 0x03) == 3 ){
+                                    renderBlocksPart3[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksPart3[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine3A[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine3A[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine3A[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine3A[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine3B[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine3B[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine3B[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine3B[i].position.z = blocksZ[i+blocksOffset]+1;
                                 }  
                                 
-                                renderBlksPart3[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksPart3[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksPart3[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksPart3[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
-                                renderBlksLine3A[i].position.y = blksY[i+blksOffset] * pitchY;
-                                //renderBlksLine3A[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksLine3A[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                //renderBlocksLine3A[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
-                                renderBlksLine3B[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksLine3B[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksLine3B[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksLine3B[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
         
-                                //!!if(blksLEDs2x2[i] != null){
+                                //!!if(blocksLEDs2x2[i] != null){
                                 // console.log('i: ' + i);
-                               // console.log('materials[blksLEDs2x2[i] & 0x07]: ' + materials[blksLEDs2x2[i] & 0x07]);
-                               // console.log('materials[(blksLEDs2x2[i] & 0x38) >> 3]: ' + materials[(blksLEDs2x2[i] & 0x38) >> 3]);
-                                    renderBlksPart3[i].material = materials[(blksLEDs2x2[i+blksOffset] & 0x07) + 8*blksUseAlpha[i+blksOffset]];
-                                    renderBlksPart1[i].material = materials[((blksLEDs2x2[i+blksOffset] & 0x38) >> 3)  + 8*blksUseAlpha[i+blksOffset]];
+                               // console.log('materials[blocksLEDs2x2[i] & 0x07]: ' + materials[blocksLEDs2x2[i] & 0x07]);
+                               // console.log('materials[(blocksLEDs2x2[i] & 0x38) >> 3]: ' + materials[(blocksLEDs2x2[i] & 0x38) >> 3]);
+                                    renderBlocksPart3[i].material = materials[(blocksLEDs2x2[i+blocksOffset] & 0x07) + 8*blocksUseAlpha[i+blocksOffset]];
+                                    renderBlocksPart1[i].material = materials[((blocksLEDs2x2[i+blocksOffset] & 0x38) >> 3)  + 8*blocksUseAlpha[i+blocksOffset]];
         
-                               //     console.log('renderBlksPart1[i].material = ' +renderBlksPart1[i].material);
-                               // console.log('renderBlksPart1[i].material = ' +renderBlksPart1[i].material);
-                               // console.log('renderBlksPart2[i].material = ' +renderBlksPart2[i].material);
+                               //     console.log('renderBlocksPart1[i].material = ' +renderBlocksPart1[i].material);
+                               // console.log('renderBlocksPart1[i].material = ' +renderBlocksPart1[i].material);
+                               // console.log('renderBlocksPart2[i].material = ' +renderBlocksPart2[i].material);
         
                                 //!!}
         
-                                renderBlksPart4[i].setEnabled(1); 
+                                renderBlocksPart4[i].setEnabled(1); 
         
-                                renderBlksLine4A[i].setEnabled(1);
-                                renderBlksLine4B[i].setEnabled(1);
+                                renderBlocksLine4A[i].setEnabled(1);
+                                renderBlocksLine4B[i].setEnabled(1);
                                 
-                                //renderBlksPart3[i] = blockNoChamf.clone("C" + i);
-                                //renderBlksPart4[i] = blockChamf.clone("D" + i);
+                                //renderBlocksPart3[i] = blockNoChamf.clone("C" + i);
+                                //renderBlocksPart4[i] = blockChamf.clone("D" + i);
                               
         
-                                if((blksRT[i+blksOffset] & 0x03) == 0 ){
-                                    renderBlksPart4[i].position.x = blksX[i+blksOffset]+2;
-                                    renderBlksPart4[i].position.z = blksZ[i+blksOffset];
+                                if((blocksRT[i+blocksOffset] & 0x03) == 0 ){
+                                    renderBlocksPart4[i].position.x = blocksX[i+blocksOffset]+2;
+                                    renderBlocksPart4[i].position.z = blocksZ[i+blocksOffset];
         
-                                    renderBlksLine4A[i].position.x = blksX[i+blksOffset]+2;
-                                    renderBlksLine4A[i].position.z = blksZ[i+blksOffset];
+                                    renderBlocksLine4A[i].position.x = blocksX[i+blocksOffset]+2;
+                                    renderBlocksLine4A[i].position.z = blocksZ[i+blocksOffset];
         
-                                    renderBlksLine4B[i].position.x = blksX[i+blksOffset]+2;
-                                    renderBlksLine4B[i].position.z = blksZ[i+blksOffset];
+                                    renderBlocksLine4B[i].position.x = blocksX[i+blocksOffset]+2;
+                                    renderBlocksLine4B[i].position.z = blocksZ[i+blocksOffset];
         
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]+3;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]+3;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]+3;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]+3;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]+1;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]+3;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]+1;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]+3;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]+1;
                                  }
-                                else if((blksRT[i+blksOffset] & 0x03) == 1 ){
-                                    renderBlksPart4[i].position.x = blksX[i+blksOffset]; 
-                                    renderBlksPart4[i].position.z = blksZ[i+blksOffset]-2;      
+                                else if((blocksRT[i+blocksOffset] & 0x03) == 1 ){
+                                    renderBlocksPart4[i].position.x = blocksX[i+blocksOffset]; 
+                                    renderBlocksPart4[i].position.z = blocksZ[i+blocksOffset]-2;      
                                     
-                                    renderBlksLine4A[i].position.x = blksX[i+blksOffset]; 
-                                    renderBlksLine4A[i].position.z = blksZ[i+blksOffset]-2;  
+                                    renderBlocksLine4A[i].position.x = blocksX[i+blocksOffset]; 
+                                    renderBlocksLine4A[i].position.z = blocksZ[i+blocksOffset]-2;  
         
-                                    renderBlksLine4B[i].position.x = blksX[i+blksOffset]; 
-                                    renderBlksLine4B[i].position.z = blksZ[i+blksOffset]-2;  
+                                    renderBlocksLine4B[i].position.x = blocksX[i+blocksOffset]; 
+                                    renderBlocksLine4B[i].position.z = blocksZ[i+blocksOffset]-2;  
         
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]-3;
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]-3;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]-3;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]-3;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]+1;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]-3;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]+1;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]-3;
         
-                                }else if((blksRT[i+blksOffset] & 0x03) == 2 ){
+                                }else if((blocksRT[i+blocksOffset] & 0x03) == 2 ){
                                     
-                                    renderBlksPart4[i].position.x = blksX[i+blksOffset]-2;
-                                    renderBlksPart4[i].position.z = blksZ[i+blksOffset];
+                                    renderBlocksPart4[i].position.x = blocksX[i+blocksOffset]-2;
+                                    renderBlocksPart4[i].position.z = blocksZ[i+blocksOffset];
         
-                                    renderBlksLine4A[i].position.x = blksX[i+blksOffset]-2;
-                                    renderBlksLine4A[i].position.z = blksZ[i+blksOffset];
+                                    renderBlocksLine4A[i].position.x = blocksX[i+blocksOffset]-2;
+                                    renderBlocksLine4A[i].position.z = blocksZ[i+blocksOffset];
         
-                                    renderBlksLine4B[i].position.x = blksX[i+blksOffset]-2;
-                                    renderBlksLine4B[i].position.z = blksZ[i+blksOffset];
+                                    renderBlocksLine4B[i].position.x = blocksX[i+blocksOffset]-2;
+                                    renderBlocksLine4B[i].position.z = blocksZ[i+blocksOffset];
                                     
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]-3;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]-3;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]-3;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]-3;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]-3;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]-1;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]-3;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]-1;
         
-                                } else if((blksRT[i+blksOffset] & 0x03) == 3 ){
-                                    renderBlksPart4[i].position.x = blksX[i+blksOffset];
-                                    renderBlksPart4[i].position.z = blksZ[i+blksOffset]+2;
+                                } else if((blocksRT[i+blocksOffset] & 0x03) == 3 ){
+                                    renderBlocksPart4[i].position.x = blocksX[i+blocksOffset];
+                                    renderBlocksPart4[i].position.z = blocksZ[i+blocksOffset]+2;
         
-                                    renderBlksLine4A[i].position.x = blksX[i+blksOffset];
-                                    renderBlksLine4A[i].position.z = blksZ[i+blksOffset]+2;
+                                    renderBlocksLine4A[i].position.x = blocksX[i+blocksOffset];
+                                    renderBlocksLine4A[i].position.z = blocksZ[i+blocksOffset]+2;
         
-                                    renderBlksLine4B[i].position.x = blksX[i+blksOffset];
-                                    renderBlksLine4B[i].position.z = blksZ[i+blksOffset]+2;
+                                    renderBlocksLine4B[i].position.x = blocksX[i+blocksOffset];
+                                    renderBlocksLine4B[i].position.z = blocksZ[i+blocksOffset]+2;
                                     
-                                    renderBlksPart2[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksPart2[i].position.z = blksZ[i+blksOffset]+3;
+                                    renderBlocksPart2[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksPart2[i].position.z = blocksZ[i+blocksOffset]+3;
         
-                                    renderBlksLine2A[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine2A[i].position.z = blksZ[i+blksOffset]+3;
+                                    renderBlocksLine2A[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine2A[i].position.z = blocksZ[i+blocksOffset]+3;
         
-                                    renderBlksLine2B[i].position.x = blksX[i+blksOffset]-1;
-                                    renderBlksLine2B[i].position.z = blksZ[i+blksOffset]+3;
+                                    renderBlocksLine2B[i].position.x = blocksX[i+blocksOffset]-1;
+                                    renderBlocksLine2B[i].position.z = blocksZ[i+blocksOffset]+3;
                                 }  
                         
-                                renderBlksPart4[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksPart4[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                                renderBlocksPart4[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksPart4[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
         
-                                renderBlksLine4A[i].position.y = blksY[i+blksOffset] * pitchY;
-                                //renderBlksLine4A[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                                renderBlocksLine4A[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                //renderBlocksLine4A[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
         
-                                renderBlksLine4B[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksLine4B[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2;
+                                renderBlocksLine4B[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksLine4B[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2;
         
-                                //renderBlksPart1[i].rotation.y = (blksRT[i] & 0x03) *Math.PI/2;
+                                //renderBlocksPart1[i].rotation.y = (blocksRT[i] & 0x03) *Math.PI/2;
         
-                                renderBlksPart2[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksPart2[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksPart2[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksPart2[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
-                                renderBlksLine2A[i].position.y = blksY[i+blksOffset] * pitchY;
-                                //renderBlksLine2A[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksLine2A[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                //renderBlocksLine2A[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
         
-                                renderBlksLine2B[i].position.y = blksY[i+blksOffset] * pitchY;
-                                renderBlksLine2B[i].rotation.y  = (blksRT[i+blksOffset] & 0x03) *Math.PI/2 -Math.PI;
+                                renderBlocksLine2B[i].position.y = blocksY[i+blocksOffset] * pitchY;
+                                renderBlocksLine2B[i].rotation.y  = (blocksRT[i+blocksOffset] & 0x03) *Math.PI/2 -Math.PI;
                                 
         
-                               //!! if(blksLEDs2x4[i] != null){
-                                    renderBlksPart2[i].material = materials[(blksLEDs2x4[i+blksOffset] & 0x07)  + 8*blksUseAlpha[i+blksOffset]];
-                                    renderBlksPart4[i].material = materials[((blksLEDs2x4[i+blksOffset] & 0x38) >> 3) + 8*blksUseAlpha[i+blksOffset]];
+                               //!! if(blocksLEDs2x4[i] != null){
+                                    renderBlocksPart2[i].material = materials[(blocksLEDs2x4[i+blocksOffset] & 0x07)  + 8*blocksUseAlpha[i+blocksOffset]];
+                                    renderBlocksPart4[i].material = materials[((blocksLEDs2x4[i+blocksOffset] & 0x38) >> 3) + 8*blocksUseAlpha[i+blocksOffset]];
         
                                //!! }
         
